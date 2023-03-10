@@ -23,22 +23,22 @@ Logsout the user. Ideally removes from the user from current session.
 - '/signup/', [POST]:
 gets an email, a password and a username from the submitted form, checks if a user with this email already exists. If successful, the user is added to the databse and logged in otherwise an error message is shown.
 
-- '/prvapps/<id>', [GET]:
+- '/prvapps/<id>/', [GET]:
 gets all previous bookings of the user with user_id (id). 
   
-- '/futureapps/<id>', [GET:
+- '/futureapps/<id>/', [GET]:
 gets all Upcoming bookings of the user with user_id (id).
 
 - '/getshops/', [GET]:
   gets all the shops in the database.
 
-- '/getshops/<postal_code>', [GET]:
+- '/getshops/<postal_code>/', [GET]:
   gets all the shops in a specific destrict in the database.
   
-- '/getbarbers/<shopid>', [GET]:
+- '/getbarbers/<shopid>/', [GET]:
   gets all the barbers registered in a barbershop.
   
-- '/getbarber/<id>', [GET]:
+- '/getbarber/<id>/', [GET]:
   gets the barber with the specified id.
   
 - '/book/', [POST]:
@@ -60,10 +60,16 @@ Components:
   
  * Dropdown:
   
-Contains all cards for the shops. Contains a dropdown to choose district number.
-  
- * Shops:
+Contains a dropdown to choose district number and is a Container for  all shop cards
+
+ * Shops: 
  
+- sends a get fetch request to the '/getshops/' to get all shops in the database. Each shop is displayed in a card with its information. 
+  
+- Subcomponent: 'ShopModal': a button that opens a modal to show barbers 'COMPONENT BARBERS' in the barbershop.
+  
+  
+  
  
 
 
