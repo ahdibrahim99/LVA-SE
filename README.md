@@ -2,7 +2,7 @@
 Self-care service website
 
 
-Backend:
+****** BACKEND ******
 
 * models.py: 
 - Contains the initation of the flask program with its configuration settings. 
@@ -38,11 +38,37 @@ gets all Upcoming bookings of the user with user_id (id).
 - '/getbarbers/<shopid>', [GET]:
   gets all the barbers registered in a barbershop.
   
-  - '/getbarber/<id>', [GET]:
+- '/getbarber/<id>', [GET]:
   gets the barber with the specified id.
   
-  - '/book/', [POST]:
-  gets all the barbers registered in a barbershop.
+- '/book/', [POST]:
+gets a date, a start time and a barber id, a user id and customer name from the submitted form in string form. It converts the date and start time to a datetime object and adds the booking to the databse. An end_time is added by default to be stqart_time + 30 mins (not particularly useful for current application)
+  
+- '/booked/<barber_id>/<date>/', [GET]:
+Gets all the booked times for a specific barber on a specific day.
+
+- '/rate/<booking_id>/<rating>/', [GET]:
+Rates a specific booking and updates the ratings for the concerned barber and barbershop.
+  
+- '/cancel/<booking_id>/', [GET]:
+Cancels the booking with the id booking_id.
+  
+  
+****** FRONTEND ****** 
+ 
+Components:
+  
+ * Dropdown:
+  
+Contains all cards for the shops. Contains a dropdown to choose district number.
+  
+ * Shops:
+ 
+ 
+
+
+  
+  
   
   
   
