@@ -64,9 +64,23 @@ Contains a dropdown to choose district number and is a Container for  all shop c
 
  * Shops: 
  
-- sends a get fetch request to the '/getshops/' to get all shops in the database. Each shop is displayed in a card with its information. 
+- sends a  fetch get request to the '/getshops/' to get all shops in the database. Each shop is displayed in a card with its information. 
   
-- Subcomponent: 'ShopModal': a button that opens a modal to show barbers 'COMPONENT BARBERS' in the barbershop.
+- Subcomponent: 'ShopModal': a button included in each card that opens a modal to show barbers 'using component BARBERS' in the barbershop.
+  
+* Barbers: 
+  
+- sends a fetch get request to '/getbarbers/' to get all barbers registered in a barbershop.
+
+- Subcomponent: 'BarberCard' : a card that includes the info for each barber including name, rating displayed in stars and a booking form 'using component AccForm'
+  
+* AccForm in 'ModalForm.js':
+ 
+- An accordion component that contains the form needed for booking an appointment.
+- Subcomponent: 
+  * 'Modal': Contains the form which request a customer name , a date and a time for an available booking. Once submitted, the form is not sent by default but has the barber id, the user id  'for which the booking is booked' and the start time appended to the forum and then is sent. The route '/book/' is fetched and the form is sent in a POST request.
+  * 'FormDropdown'
+ 
   
   
   
