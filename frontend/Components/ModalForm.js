@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 import UserContext from '../Context';
 
 
-function Modal({Barber, onClose}) {
+function FormFormDropdown({Barber, onClose}) {
 
   const[date, setDate]= useState('')
   const[time, setTime]= useState('')
@@ -80,7 +80,7 @@ function AccForm({Barber, onClose}){
       <Accordion.Item eventKey="0"></Accordion.Item>
         <Accordion.Header>Book an Appointment</Accordion.Header>
         <Accordion.Body>
-          <Modal Barber={Barber} onClose={onClose}></Modal>
+          <Form Barber={Barber} onClose={onClose}></Form>
         </Accordion.Body>
     </Accordion>
       );
